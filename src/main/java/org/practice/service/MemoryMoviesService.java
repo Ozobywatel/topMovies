@@ -1,11 +1,9 @@
 package org.practice.service;
 
 import org.practice.Movie;
-import org.practice.Rating;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 public class MemoryMoviesService implements MoviesService {
 
@@ -17,7 +15,7 @@ public class MemoryMoviesService implements MoviesService {
 
     private List<Movie> list;
 
-    public MemoryMoviesService() {
+    public void MemoryMoviesService() {
         list = new ArrayList<>();
         list.add(new Movie("The Shawshank Redemption", "PT142M", List.of("Tim Robbins", "Morgan Freeman", "Bob Gunton"),
                 List.of(), List.of(66380, 7001, 9250, 34139), List.of(15291, 51417, 62289, 6146, 71389, 93707)));
