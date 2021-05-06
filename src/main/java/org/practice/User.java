@@ -25,4 +25,13 @@ public class User {
         this.email = email;
         this.friends = friends;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId=" + userId +
+                ", email='" + email + '\'' +
+                ", friends=" + friends +
+                '}';
+    }
 }

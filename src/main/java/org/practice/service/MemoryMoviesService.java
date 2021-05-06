@@ -15,7 +15,7 @@ public class MemoryMoviesService implements MoviesService {
 
     private List<Movie> list;
 
-    public void MemoryMoviesService() {
+    public MemoryMoviesService() {
         list = new ArrayList<>();
         list.add(new Movie("The Shawshank Redemption", "PT142M", List.of("Tim Robbins", "Morgan Freeman", "Bob Gunton"),
                 List.of(), List.of(66380, 7001, 9250, 34139), List.of(15291, 51417, 62289, 6146, 71389, 93707)));
