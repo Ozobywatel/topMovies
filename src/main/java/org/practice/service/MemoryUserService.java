@@ -35,4 +35,5 @@ public class MemoryUserService implements UserService{
 
         return getuList().stream().filter(it->it.getUserId() == id).findFirst();
     }
+
 }

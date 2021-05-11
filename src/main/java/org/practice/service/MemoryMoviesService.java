@@ -1,17 +1,10 @@
 package org.practice.service;
 
 import org.practice.Movie;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class MemoryMoviesService implements MoviesService {
-
-
-    @Override
-    public List<Movie> moviesById(int id) {
-        return null;
-    }
 
     private List<Movie> list;
 
@@ -28,6 +21,15 @@ public class MemoryMoviesService implements MoviesService {
         list.add(new Movie("Schindler's List", "PT195M", List.of("Liam Neeson", "Ralph Fiennes", "Ben Kingsley"),
                 List.of(), List.of(62289, 66380, 6146, 71389), List.of(15291, 51417, 7001, 9250, 93707)));
     }
+
+    public List<Movie> getmList() {
+        return list;
+    }
+
+    public void setmList(List<Movie> list) {
+        this.list = list;
+    }
+
 
 
 }
