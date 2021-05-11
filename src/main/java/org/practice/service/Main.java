@@ -3,6 +3,7 @@ package org.practice.service;
 import org.practice.Movie;
 import org.practice.User;
 
+import java.util.Collections;
 import java.util.List;
 
 public class Main {
@@ -20,7 +21,7 @@ public class Main {
 
         for (Movie movie: movies) {
             List<Integer> moviesWatchedBy = movie.getWatchlist();
-            moviesWatchedBy.retainAll( friends );
+            moviesWatchedBy.retainAll(friends);
             for (Integer friendsId :
                     moviesWatchedBy) {
                 System.out.println(friendsId);
