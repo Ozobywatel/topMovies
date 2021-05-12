@@ -21,7 +21,8 @@ public class Main {
         for (Movie movie : movies) {
             List<Integer> moviesWatchedBy = movie.getWatchlist();
             moviesWatchedBy.retainAll(friends);
-
+            int numOfViews = moviesWatchedBy.size();
+            String title = movie.getTitle();
 
         }
 
