@@ -1,7 +1,6 @@
 package org.practice;
 
 
-
 import org.practice.service.MemoryMoviesService;
 import org.practice.service.MemoryUserService;
 
@@ -28,12 +27,11 @@ public class MoviesAnalyzer {
         MemoryMoviesService memoryMoviesService = new MemoryMoviesService();
 
 
-        User user = memoryUserService.getUserById(userId).orElseThrow(() -> new RuntimeException("Non matching user"));
-        List<Integer> friends = user.getFriends();
+        List<Integer> friends = memoryUserService.getUserById(userId).orElseThrow(() -> new RuntimeException("Non matching user")).getFriends();
 
         List<Movie> movies = memoryMoviesService.getmList();
 
-        List<String> titlesOnly = new ArrayList<>();
+
 
         Map<String, Integer> map = new HashMap<>();
 
@@ -51,16 +49,18 @@ public class MoviesAnalyzer {
             public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
 
                 return o2.getValue().compareTo(o1.getValue());
-
             }
         });
+
+        List<String> titlesOnly = new ArrayList<>();
 
         for (Map.Entry<String, Integer> entry : list) {
             titlesOnly.add(entry.getKey());
         }
-        if(titlesOnly.size() >= 4) {
+        if (titlesOnly.size() >= 4) {
             return titlesOnly.subList(0, 4);
         } else {
-        return titlesOnly;}
+            return titlesOnly;
+        }
     }
 }
