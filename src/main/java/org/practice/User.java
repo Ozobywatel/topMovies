@@ -1,12 +1,13 @@
 package org.practice;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class User {
 
     private int userId;
     private String email;
-    private List<Integer> friends;
+    private ArrayList<Integer> friends;
 
     public int getUserId() {
         return userId;
@@ -16,11 +17,11 @@ public class User {
         return email;
     }
 
-    public List<Integer> getFriends() {
+    public ArrayList<Integer> getFriends() {
         return friends;
     }
 
-    public User(int userId, String email, List<Integer> friends) {
+    public User(int userId, String email, ArrayList<Integer> friends) {
         this.userId = userId;
         this.email = email;
         this.friends = friends;

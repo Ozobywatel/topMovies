@@ -3,6 +3,7 @@ package org.practice.service;
 import org.practice.User;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -12,10 +13,10 @@ public class MemoryUserService implements UserService{
 
     public MemoryUserService(){
         uList = new ArrayList<>();
-        uList.add(new User(15291, "Constantin_Kuhlman15@yahoo.com", List.of(7001, 51417, 62289)));
-        uList.add(new User(7001, "Keven6@gmail.com", List.of(15291, 51417, 62289, 66380)));
-        uList.add(new User(51417, "Margaretta82@gmail.com", List.of(15291, 7001, 9250)));
-        uList.add(new User(62289, "Marquise.Borer@hotmail.com", List.of(15291, 7001)));
+        uList.add(new User(15291, "Constantin_Kuhlman15@yahoo.com", new ArrayList<>(Arrays.asList(7001, 51417, 62289))));
+        uList.add(new User(7001, "Keven6@gmail.com", new ArrayList<>(Arrays.asList(15291, 51417, 62289, 66380))));
+        uList.add(new User(51417, "Margaretta82@gmail.com", new ArrayList<>(Arrays.asList(15291, 7001, 9250))));
+        uList.add(new User(62289, "Marquise.Borer@hotmail.com", new ArrayList<>(Arrays.asList(15291, 7001))));
     }
 
 
