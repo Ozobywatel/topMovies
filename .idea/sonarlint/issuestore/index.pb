@@ -5,8 +5,6 @@ V
 &src/main/java/org/practice/Rating.java,e/6/e65e7baadcc670f17fb2fafc40965f25d11623b8
 9
 	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-^
-.src/main/java/org/practice/MoviesAnalyzer.java,5/b/5b1359a80bebcfdc0302f97659e95159cd164df9
 c
 3src/main/java/org/practice/service/UserService.java,4/8/48cd822231c5012e0f9d845766b8a8f3cd01a942
 U

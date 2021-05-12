@@ -2,7 +2,10 @@ package org.practice;
 
 
 
-import java.util.List;
+import org.practice.service.MemoryMoviesService;
+import org.practice.service.MemoryUserService;
+
+import java.util.*;
 
 public class MoviesAnalyzer {
 
@@ -14,13 +17,50 @@ public class MoviesAnalyzer {
         this.users = users;
     }
 
+    public MoviesAnalyzer() {
+
+    }
+
     public List<String> topWatchlistedMoviesAmongFriends(int userId) {
 
 
+        MemoryUserService memoryUserService = new MemoryUserService();
+        MemoryMoviesService memoryMoviesService = new MemoryMoviesService();
 
 
+        User user = memoryUserService.getUserById(userId).orElseThrow(() -> new RuntimeException("Non matching user"));
+        List<Integer> friends = user.getFriends();
 
+        List<Movie> movies = memoryMoviesService.getmList();
 
-        return null; //TODO: Implement
+        List<String> titlesOnly = new ArrayList<>();
+
+        Map<String, Integer> map = new HashMap<>();
+
+        for (Movie movie : movies) {
+            List<Integer> moviesWatchedBy = movie.getWatchlist();
+            moviesWatchedBy.retainAll(friends);
+            if (moviesWatchedBy.size() > 0) {
+                map.put(movie.getTitle(), moviesWatchedBy.size());
+            }
+        }
+
+        List<Map.Entry<String, Integer>> list = new LinkedList<Map.Entry<String, Integer>>(map.entrySet());
+        //sorting the list elements
+        Collections.sort(list, new Comparator<Map.Entry<String, Integer>>() {
+            public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
+
+                return o2.getValue().compareTo(o1.getValue());
+
+            }
+        });
+
+        for (Map.Entry<String, Integer> entry : list) {
+            titlesOnly.add(entry.getKey());
+        }
+        if(titlesOnly.size() >= 4) {
+            return titlesOnly.subList(0, 4);
+        } else {
+        return titlesOnly;}
     }
 }
